@@ -1,0 +1,47 @@
+\documentclass[ngerman, colors={mat},
+%aspectratio=169
+]{URbeamer}
+
+\usepackage{babel,csquotes}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\graphicspath{{./Bilder/}}
+
+\subject{Schülerzirkel Mathematik am 02.06.2018}
+\title{Vom Skalarprodukt\\zur Bildbearbeitung}
+\subtitle{Faltungsbeispiele}
+\date{}
+\institute{Fakultät für Mathematik}
+%\author{Gesina Schwalbe}
+
+\begin{document}
+\frame[plain]{\titlepage}
+
+\newcommand{\bildvergleich}[2]{
+  \begin{frame}{#2}
+    \centering
+    \begin{tabularx}{\linewidth}{@{} X c X @{}}
+      \parbox[c]{\linewidth}{
+        \includegraphics[width=\linewidth]{#1-original}
+      }
+      &\parbox[c]{3em}{
+        $\overset{
+          \includegraphics[width=\linewidth]{#1-kern}
+        }{
+          \Longrightarrow
+        }$
+      }
+      &\parbox[c]{\linewidth}{
+        \includegraphics[width=\linewidth]{#1}
+      }
+    \end{tabularx}
+  \end{frame}
+}
+
+\bildvergleich{horizontale_linie}{Horizontale (scharfe) Linie}
+\bildvergleich{vertikale_kante-dunkel}{Vertikale Kante}
+\bildvergleich{relief}{Relief}
+\bildvergleich{schaerfen}{Schärfen}
+
+
+\end{document}

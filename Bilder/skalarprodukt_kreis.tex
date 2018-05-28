@@ -1,0 +1,32 @@
+\begin{tikzpicture}
+  \pgfplotsset{
+    every axis plot post/.style={solid, thick, mark=*}}
+  \begin{axis}[
+    font=\scriptsize,
+    width=1.75\linewidth,
+    axis equal,
+    axis lines=middle,
+    xmin=-1.2, xmax=1.2, xtick distance=0.5, ticklabel style={font=\tiny},
+    ymin=-1.2, ymax=1.2, ytick distance=0.5,
+    ]
+    \begin{scope}[every node/.style={pos=1, black}]
+      \addplot[gray] coordinates {(0,0) ({1/sqrt(2)},{1/sqrt(2)})}
+      node[above] {$\frac{1}{\sqrt{2}}(1,1)$};
+      \addplot[gray] coordinates {(0,0) (0,1)}
+      node[above right] {$(0,1)$};
+      \addplot[gray] coordinates {(0,0) ({-1/sqrt(2)},{1/sqrt(2)})}
+      node[above] {$\frac{1}{\sqrt{2}}(-1,1)$};
+      \addplot[gray] coordinates {(0,0) (-1,0)}
+      node[above left, xshift=0.5em] {$(-1,0)$};
+      \addplot[gray] coordinates {(0,0) ({-1/sqrt(2)},{-1/sqrt(2)})}
+      node[below] {$\frac{1}{\sqrt{2}}(-1,-1)$};
+      \addplot[gray] coordinates {(0,0) (0,-1)}
+      node[below right] {$(0,-1)$};
+      \addplot[gray] coordinates {(0,0) ({1/sqrt(2)},{-1/sqrt(2)})}
+      node[below,xshift=0.5em] {$\frac{1}{\sqrt{2}}(1,-1)$};
+      \addplot[black,thick] coordinates {(0,0) (1,0)}
+      node[above right] {$(1,0)$};
+    \end{scope}
+    \draw[gray!30, dashed] (axis cs:0,0) circle[radius=1];
+  \end{axis}
+\end{tikzpicture}

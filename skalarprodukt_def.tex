@@ -1,0 +1,59 @@
+% Definitionen/Pakete für Handout und Aufgaben
+
+\KOMAoptions{parskip=half, headinclude=true, headsepline=true}
+
+% Pakete
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}
+\usepackage[ngerman]{babel}
+\usepackage{csquotes}
+\usepackage{graphicx}
+\newcommand*{\imagesourcefolder}{./Bilder}
+\graphicspath{{\imagesourcefolder/}}
+\usepackage{xcolor}
+\usepackage{wrapfig}
+\usepackage{mathtools}
+\usepackage[per-mode=fraction]{siunitx}
+\usepackage{tikz,pgfplots}
+\usepgfplotslibrary{polar}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{plotmarks}
+\usetikzlibrary{calc}
+\pgfplotsset{compat=newest}
+\usepackage{tabularx}
+\usepackage{booktabs}
+
+% Layout
+\usepackage[
+origlayout=true, automark, colors={mat},
+headsepline=4pt,
+intern  % spare Tinte
+]{URpagestyles}
+\pagestyle{URheadings}
+\renewcommand{\titlepagestyle}{URtitle}
+\addtokomafont{section}{\Large\normalfont\bfseries}
+
+% Lückentext/Antworten
+\usepackage[thickness=0pt,textcolor=gray]{cloze}
+\clozesetfont{\LARGE\itshape}
+\makeatletter
+\newif\ifhide
+\@ifclasswith{scrartcl}{hide}{\hidetrue}{\hidefalse}
+\makeatother
+\newcommand{\Loesung}[1]{\ifhide\relax\else{\clozefont{}\color{gray}#1}\fi}
+\newcommand{\ausfuelltext}[1]{\cloze{#1\strut}}
+\newcommand{\formel}[1]{\fcolorbox{gray}{white}{#1}}
+\newcommand{\canvas}[3][c]{
+  \parbox[#1]{#2}{~\\[-\baselineskip]%
+    \formel{#3}%
+    \\\hbox{}
+  }
+}
+
+% Titel, Metadaten
+\usepackage[colorlinks=true, linkcolor=blue,
+pdfauthor={Gesina Schwalbe}
+]{hyperref}
+\subject{Schülerzirkel am 02.06.2018}
+\date{}
+\author{Gesina Schwalbe}

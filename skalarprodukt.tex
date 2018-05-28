@@ -1,0 +1,155 @@
+% Vortragsinhalt  „Vom Skalarprodukt zur Bildbearbeitung”
+
+\input{skalarprodukt_def}
+
+
+% Titel, Metadaten
+\hypersetup{pdftitle={Vom Skalarprodukt zur Bildbearbeitung}}
+\title{Vom Skalarprodukt zur Bildbearbeitung}
+\ohead{Vom Skalarprodukt zur Bildbearbeitung}
+
+
+\begin{document}
+\maketitle
+
+\section*{Definitionen}
+\textbf{Vektor\strut} \enquote{Wegbeschreibung}
+
+\begin{tabularx}{1.1\linewidth}{@{} X r @{}}
+  \begin{minipage}[t]{\linewidth}
+    \textbf{Koordinatensystem}\par
+    \begin{enumerate}
+    \item \ausfuelltext{Nullpunkt}
+    \item \ausfuelltext{Grundrichtungen mit (Schritt)\-Län\-gen in best. Reihenfolge}
+      \\so, dass:
+      \begin{itemize}
+      \item \ausfuelltext{Jeder Punkt erreichbar}
+      \item \ausfuelltext{So wenige wie möglich}
+      \end{itemize}
+    \end{enumerate}
+  \end{minipage}
+  & \canvas[t]{0.5\linewidth}{
+    \ausfuelltext{\input{\imagesourcefolder/koordinatensystem}}}
+\end{tabularx}
+
+\textbf{Vektordarstellung}\par
+    \formel{\ausfuelltext{
+        $\Big(
+        \text{<Schritte in Richtung 1>},
+        \text{<Schritte in Richtung 2>},
+        \dots
+        \Big)$
+      }}
+\ifhide\relax\else{
+  \begin{itemize}
+  \item Die Reihenfolge, in der ich die Schritte mache, ist egal!
+  \item Auch Schrittbruchteile sind erlaubt.
+  \end{itemize}
+}\fi
+
+\section*{Rechnen mit Vektoren}
+\begin{tabularx}{1.15\linewidth}{@{} X l @{}}
+  \textbf{Addition\strut}\par
+  \formel{$(x_1,\dots,x_n) + (y_1,\dots,y_n) =
+    \text{\ausfuelltext{$(x_1+y_1,\dots,x_n+y_n)$}}$}
+  \par
+  Beispiel: $(2,1) + (-1,1) = \text{\ausfuelltext{$(1,2)$}}$
+  & \canvas[t]{0.35\linewidth}{\input{\imagesourcefolder/vektoraddition}}\\
+  \textbf{Strecken/Stauchen\strut}\par
+  \formel{$(x_1,\dots,x_n) + (y_1,\dots,y_n) =
+    \text{\ausfuelltext{$(a\cdot x_1,\dots,a\cdot x_n)$}}$}
+  \par
+  Beispiel: $\frac 12 \cdot (2,1) = \text{\ausfuelltext{$(1,\frac 12)$}}$
+  & \canvas[t]{0.35\linewidth}{\input{\imagesourcefolder/skalarmultiplikation}}
+\end{tabularx}
+Insbes. \formel{$(x_1,\dots,x_n) =
+  x_1\cdot(1,0,\dotsc,0) +
+  x_2\cdot(0,1,0,\dotsc) + \dotsb +
+  x_n\cdot(0,\dotsc,0,1)
+  $}
+
+
+\section*{Andere Räume mit Koordinatensystem}
+\begin{itemize}
+\item RGB-Farbpixel: (Rotwert, Grünwert, Blauwert)
+\item Schwarz-weiß Bild: (Helligkeit Pixel 1, Helligkeit Pixel 2,
+  \dots)
+  \hfill
+  \parbox[b][1eM]{6em}{\frame{\includegraphics[width=6em]{bildvektor}}}
+\end{itemize}
+
+
+\section*{Skalarprodukt}
+\begin{wrapfigure}[5]{r}{0.3\linewidth}
+  \input{\imagesourcefolder/skalarprodukt_kreis}
+\end{wrapfigure}
+\formel{$(x_1, \dotsc,x_n) \circ (y_1,\dotsc, y_n) =
+  \text{\ausfuelltext{$x_1\cdot y_1 + x_2\cdot y_2 + \dotsb + x_n\cdot y_n$}}
+  $}
+Das Skalarprodukt ist ein Maß dafür,
+\ausfuelltext{wie sehr zwei Vektoren in dieselbe Richtung
+  zeigen.}
+
+Genauer:\par
+\formel{$x\circ y =
+  \text{\ausfuelltext{$\text{Länge}(x) \cdot \text{Länge}(y) \cdot \cos(\phi)$}}$}
+
+\bigskip
+\bigskip
+\input{\imagesourcefolder/cosinus}
+
+\section*{Anwendung in der Bildverarbeitung: Faltung}
+Eine Faltung sammelt die Ergebnisse von Skalarprodukten eines
+Vergleichsbildausschnitts mit Bildausschnitten unseres Anfangsbildes
+in einem Ergebnisbild.
+\begin{center}
+  \includegraphics[width=0.5\linewidth]{faltung}
+\end{center}
+
+\begin{tabularx}{0.9\linewidth}{@{} X l @{}}
+  \textbf{Wirkung der Faltung} & \textbf{Vergleichsbildausschnitt}\\\toprule
+  horizontale (scharfe) Linie
+  & \parbox[c]{4em}{\includegraphics[width=\linewidth]{horizontale_linie-kern}}
+  \\\midrule
+  vertikale Kante von dunkel zu hell
+  & \parbox[c]{4em}{\includegraphics[width=\linewidth]{vertikale_kante-dunkel-kern}}
+    \quad oder \quad
+    \parbox[c]{4em}{\includegraphics[width=\linewidth]{vertikale_kante-hell-kern}}
+    \\\midrule
+  Relief
+  & \parbox[c]{4em}{\includegraphics[width=\linewidth]{relief-kern}}
+  \\\midrule
+  Schärfen
+  & \parbox[c]{4em}{\includegraphics[width=\linewidth]{schaerfen-kern}}
+  \\\bottomrule
+\end{tabularx}
+
+\subsection*{Beachte für den Umgang mit Bildern und Faltungen:}
+\begin{itemize}
+\item Pixelwerte
+  $\begin{cases}
+    <0 & \text{keine Farbe (schwarz)} \\
+    >255 & \text{volle Farbe (weiß)} \\
+  \end{cases}$
+\item Für Vergleichsbildausschnitte sollte man beachten:
+  \begin{itemize}
+  \item Die Summe der Einträge sollte zwischen 0 und 1 sein.
+  \item Um obige Bedingungen zu erreichen:
+    Die Tendenz (hell zu dunkel) ist entscheidend.
+  \end{itemize}
+\end{itemize}
+
+\enlargethispage{2cm}
+\subsection*{Gimp Bedienung}
+\begin{tabularx}{1.1\linewidth}{ @{} X l @{}}
+  \texttt{Filters $\rightarrow$ Generic $\rightarrow$ Convolution
+    Matrix…}
+  \par
+  Starte mit folgenden Einstellungen:
+  &
+  \parbox[t]{0.45\linewidth}{
+    \vspace*{-3\baselineskip}
+    \includegraphics[width=\linewidth]{faltung_gimp_screenshot}
+  }
+\end{tabularx}
+\end{document}

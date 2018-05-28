@@ -1,0 +1,21 @@
+% Beispiel einer Vektoraddition
+
+\begin{tikzpicture}
+  \begin{axis}[
+    width=\linewidth,
+    font=\scriptsize,
+    axis equal, axis lines=center,
+    xmin=0, xmax=2.1, xtick distance=1, xticklabels=\empty,
+    ymin=0, ymax=2.1, ytick distance=1, yticklabels=\empty
+    ]
+    \coordinate (A) at (axis cs:0,0);
+    \coordinate (B) at (axis cs:2,1);
+    \coordinate (C) at (axis cs:1,2);
+    \draw[thick, -Stealth] (A) -- (B)
+    node [pos=0.75,below] {$(2,1)$};
+    \draw[thick, -Stealth] (B) -- (C)
+    node [pos=0.75,right] {$(-1,1)$};
+    \draw[thick, -Stealth] (A) -- (C)
+    node [pos=0.75,left] {$(1,2)$};
+  \end{axis}
+\end{tikzpicture}

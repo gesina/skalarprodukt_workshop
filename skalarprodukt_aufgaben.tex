@@ -1,0 +1,202 @@
+
+\input{skalarprodukt_def}
+\clozesetfont{\itshape}
+
+% Titel
+\hypersetup{pdftitle={Aufgaben: Vom Skalarprodukt zur
+    Bildbearbeitung}}
+\title{Aufgaben}
+\subtitle{zum Vortrag \enquote{Vom Skalarprodukt zur Bildbearbeitung}}
+\author{Clara Löh, Julian Seipel, Gesina Schwalbe}
+
+\begin{document}
+\maketitle
+
+\section*{Eigenschaften von Vektoren}
+\begin{enumerate}
+\item \emph{(Distributivität von Vektoraddition und Skalarmultiplikation)}
+  Berechne folgende Vektoren:
+  \begin{enumerate}
+  \item $2 \cdot \left[ (2,1) + (-3,1) \right]
+    \text{\cloze{$=(-2,4)$}}$
+    \\$\left[ 2\cdot(2,1)\right] + \left[ 2\cdot(-3,1) \right]
+    \text{\cloze{$=(-2,4)$}}$
+  \item $-3 \cdot \left[ (1,3,-2) + (-1, -2, 3) \right]
+    \text{\cloze{$=(0, -3, -3)$}}$
+    \\$\left[ -3\cdot(1,3,-2) \right] + \left[ -3\cdot(-1, -2, 3)\right]
+    \text{\cloze{$=(0, -3, -3)$}}$
+  \end{enumerate}
+  Kannst du folgende allgemeine Regel für Vektoren
+  $x=(x_1,\dotsc,x_n)$ und $y=(y_1,\dotsc,y_n)$ bestätigen?
+  \begin{gather*}
+    \SwapAboveDisplaySkip
+    a \cdot \left[ x + y \right]
+    = \left[ a\cdot x \right]
+    + \left[ a\cdot y \right]
+  \end{gather*}
+\item \emph{(Bilinearität des Skalarprodukts I)}
+  Berechne folgende Skalarprodukte:
+  \begin{enumerate}
+  \item $\left[ (1, -2) + (-3, 1) \right] \circ (1, -3)
+    \text{\cloze{$=(-2,-1)\circ(1,-3)= 1$}}$
+    \\$\left[(1,-2)\circ(1,-3)\right] + \left[(-3,1)\circ(1,-3)\right]
+    \text{\cloze{$=(-2,-1)\circ(1,-3)= 1$}}$
+  \item $(3, 2) \circ \left[ (-5, 3) + (4, -3)\right]
+    \text{\cloze{$=(3,2)\circ(-1,0)= -3$}}$
+    \\$\left[(3,2)\circ(-5,3)\right] + \left[(3,2)\circ(4,-3)\right]
+    \text{\cloze{$=(3,2)\circ(-1,0)= -3$}}$
+  \end{enumerate}
+  Kannst du folgende allgemeinen Regeln für Vektoren
+  $x=(x_1,\dotsc,x_n)$, $y=(y_1,\dotsc,y_n)$, und $z=(z_1,\dotsc,z_n)$
+  bestätigen?
+  \begin{gather*}
+    \left[x + y\right] \circ z
+    = \left[x\circ z\right] + \left[y\circ z\right]
+    \\
+    x \circ \left[y + z\right]
+    = \left[x\circ y\right] + \left[x\circ z\right]
+  \end{gather*}
+\item \emph{(Bonus: Bilinearität des Skalarprodukts II)}
+  Berechne folgende Skalarprodukte:
+  \begin{enumerate}
+  \item $3 \cdot \left[ (-1, 2) \circ (3, 1) \right]
+    \text{\cloze{$=3 \cdot -1= -3$}}$
+  \item $\left[ 3\cdot(-1, 2) \right] \circ (3, 1)
+    \text{\cloze{$=3 \cdot -1= -3$}}$
+  \item $(-1, 2) \circ \left[ 3\cdot (3, 1)\right]
+    \text{\cloze{$=3 \cdot -1= -3$}}$
+  \end{enumerate}
+  Kannst du folgende allgemeine Regel für Vektoren
+  $x=(x_1,\dotsc,x_n)$ und $y=(y_1,\dotsc,y_n)$ bestätigen?
+  \begin{gather*}
+    a \cdot \left[ x \circ y \right]
+    = \left[ a\cdot x \right] \circ y
+    = x \circ \left[ a\cdot y \right]
+  \end{gather*}
+\item \emph{(Bonus: Geschwindigkeitsvektoren)}
+  Wähle ein Koordinatensystem und zeichne den Geschwindigkeitsvektor
+  eines Steins ein, der mit \SI{10}{\meter\per\second} (Länge unseres
+  Geschwindigkeitsvektors) im nicht ganz optimalen Winkel von
+  \SI{30}{\degree} auf eine Wasseroberfläche trifft.
+  Welchen senkrechten Geschwindigkeitsanteil hat unser Stein?
+  \Loesung{Der Vektor ist ca. $(9,66 , 2,59)$.}
+  \par
+  \emph{(Bonus-Bonus)} Weißt du, warum er, wenn richtig geworfen, nicht einsinkt?
+% \item \emph{Bonus: Kraftvektoren}
+%   Eine Lampe hängt an zwei gleich langen Seilen auf, die beide im
+%   \SI{45}{\degree}-Winkel von gegenüberliegenden Wänden hängen. 
+%   Die Lampe ist ordentlich schwer und zieht mit einer Kraft von
+%   10~Newton (das ist die Länge unseres Kraftvektors), also
+%   10~Schokoladentafeln, senkrecht nach unten.
+%   Damit sie nicht herunterfällt, müssen jeweils in Richtung der beiden
+%   Seile zwei so starke Kräfte ziehen, dass ihr gemeinsamer,
+%   d.\,h. addierter, senkrechter Anteil die 10~Newton aufhebt
+%   (also ein -10~Newton langer Vektor in senkrechter Richtung).
+%   \begin{enumerate}
+%   \item Wähle ein Koordinatensystem für Kräfte und zeichne die 10
+%     bzw. -10~Newton sowie die Richtung der beiden Fadenkräfte ein.
+%   \item Finde die Fadenkräftevektoren und zeichne sie ein. Wie lang
+%     (d.\,h. stark) sind diese?
+%   \item Was ist der horizontale Anteil eines Fadenvektors?
+%     (Das ist dann die Kraft, die die Wand aushalten muss)
+%   \item[] \emph{(Bonus)} Probiere das ganze nochmal mit gespannteren
+%     Seilen, z.\,B. mit einem Winkel von \SI{170}{\degree} zwischen den
+%     Seilen. Wie stark sind dann die horizontalen Kräfte, die die Wand
+%     aushalten muss?
+%     Traust du dich dann noch, unter der Lampe durchzulaufen?
+%   \end{enumerate}
+\end{enumerate}
+
+\section*{Bildbearbeitung mit Gimp in Theorie und in der Praxis}
+\begin{enumerate}
+\item Welcher Vergleichsbildausschnitt verändert bei einer Faltung ein
+  Bild gar nicht?
+  \Loesung{Der mittlere Eintrag 1, sonst nur 0}
+  \par
+  Mit welchem Vergleichsbildausschnitt kannst du das Bild mit einer
+  Faltung einfach nur heller, und mit welchem einfach nur dunkler
+  machen? Was hat er mit dem Ergebnis von oben zu tun? 
+  \Loesung{Der Faktor ist der mittlere Eintrag, alle anderen sind
+    0. D.h. es ist ein Vielfaches des Kerns von oben.}
+\item Welcher Vergleichsbildausschnitt könnte diese Faltung hervorrufen?
+  \begin{center}
+    \parbox[c]{0.4\linewidth}{
+      \includegraphics[width=\linewidth]{horizontale_kante-dunkel-original}
+      \\\hbox{}}
+    $\Rightarrow$
+    \parbox[c]{0.4\linewidth}{
+      \includegraphics[width=\linewidth]{horizontale_kante-dunkel}
+      \\\hbox{}}
+  \end{center}
+  \Loesung{Mögliche Antworten:
+    \begin{gather*}
+      \begin{bmatrix}
+        0 &-1 &0\\
+        0 & 1 &0\\
+        0 & 0 &0
+      \end{bmatrix}
+      \qquad
+      \begin{bmatrix}
+        -1 &-1 &-1\\
+         1 & 1 & 1\\
+         0 & 0 & 0
+      \end{bmatrix}
+    \end{gather*}}
+\item Überlege dir, wie ein Kernel für folgende Probleme aussehen könnte,
+  probiere deine Ideen zusammen mit deiner Gruppe aus und verbessere
+  sie:
+  \begin{description}
+  \item[Künstliche Unschärfe] Ersetze ein Pixel durch den
+    Durchschnittswert seiner umliegenden Pixel.
+    Inwiefern stellt der Vergleichsbildausschnitt eine Unschärfe dar?
+    \Loesung{Am einfachsten: Setze alle 9 Kernwerte auf 1 und den
+      Divisor auf $\frac 19$}
+    \\Bonus: Was heißt unscharf bei Bildern für benachbarte
+    Pixelwerte?
+    \Loesung{Die Helligkeit benachbarter Pixel unterscheidet sich
+      wenig – alles Einheitsbrei.}
+  \item[Ecken-/Kantenerkennung] Markiere alle Kantenpixel hell, die
+    übrigen dunkel.
+    Tipp: Finde erst Vergleichsbildausschnitte für verschiedene
+    Kantentypen und addiere sie.
+    Inwiefern benutzt du damit die Bilinearität des Skalarprodukts
+    (s.o.)?
+    \Loesung{Mögliche Antworten:
+      \begin{gather*}
+        \begin{bmatrix}
+            0  &-1 & 0\\
+            -1 & 4 &-1\\
+            0  &-1 & 0
+          \end{bmatrix}
+        \qquad
+        \begin{bmatrix}
+            -1 &-1 &-1\\
+            -1 & 8 &-1\\
+            -1 &-1 &-1
+          \end{bmatrix}
+      \end{gather*}
+    }
+  \end{description}
+\item \emph{(Bonus: Bildschärfungsfaltung)}
+  Betrachte folgenden Kernel, der eine künstliche Schärfung der
+  Kanten eines Bildes bewirkt, und verändere die mittlere Zahl nach
+  oben und nach unten:
+  \begin{center}
+    \includegraphics[width=4em]{schaerfen-kern}
+  \end{center}
+  Was erhälst du bei niedrigeren Werten?
+  \Loesung{Das Bild wird bei 4 zur Kantenerkennung, darunter immer
+    mehr schwarz.}
+  Was passiert bei höheren?
+  \Loesung{Das Bild wird immer heller, der Schärfungseffekt
+    weniger.}
+  \par
+  Kannst du die Operation „Bild schärfen” durch die Summe zweier
+  Faltungen beschreiben?
+  \Loesung{Die Bildschärfungsfaltung addiert eigentlich nur die
+    Ergebnisse der Identität, d.h. das ursprüngliche Bild, und
+    das Ergebnis einer Kantenerkennung.
+    Erhöht man den Wert, wird das ursprüngliche Bild entsprechend
+    vielfach aufaddiert und das Resultat somit insgesamt heller.}
+\end{enumerate}
+\end{document}

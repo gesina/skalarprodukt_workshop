@@ -1,0 +1,28 @@
+\begin{tikzpicture}
+  \begin{axis}[
+    width=\linewidth,
+    height=0.5\linewidth,
+    grid=both,
+    grid style={dashed,gray!30},
+    legend pos=south east,
+    % 
+    xlabel={$\text{Winkel $\phi$ zwischen (1,0) und $x$}$},
+    axis x line=middle,
+    xmin=0, xmax=380, xtick distance=90, minor x tick num=1,
+    xticklabel={$\pgfmathprintnumber{\tick}\si{\degree}$},
+    % 
+    ylabel={$(1,0)\circ x$},
+    axis y line=left,
+    ymin=-1.1, ymax=1.1,
+    ytick distance=0.5,
+    extra y ticks={{-1/sqrt(2)},{1/sqrt(2)}},
+    extra y tick labels={$-\frac{1}{\sqrt{2}}$,$-\frac{1}{\sqrt{2}}$},
+    ]
+    \ifhide\relax
+    \else{
+      \addplot[smooth,domain=0:360,samples=33,mark repeat=4,mark=o, mark color=gray] {cos(x)};
+      \legend{$\cos(x)$}
+    }
+    \fi
+  \end{axis}
+\end{tikzpicture}
